@@ -2,80 +2,46 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>TypeFast — Contact & Location</title>
+<title>TypeFast Contact</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 *{box-sizing:border-box;}
-body{
-  margin:0; font-family:system-ui,sans-serif; color:#e5e7eb;
-  background:linear-gradient(270deg,#2145bd,#3b82f6,#6366f1,#2145bd);
-  background-size:600% 600%; animation:gradient 30s ease infinite;
-  min-height:100vh; display:flex; justify-content:center; align-items:flex-start; padding-top:40px;
-}
+body{margin:0; font-family:system-ui,sans-serif; color:#e5e7eb; background:linear-gradient(270deg,#2145bd,#3b82f6,#6366f1,#2145bd); background-size:600% 600%; animation:gradient 30s ease infinite; min-height:100vh; display:flex; justify-content:center; align-items:flex-start; padding-top:40px;}
 @keyframes gradient{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%;}}
-header{
-  position:fixed; top:0; left:0; right:0;
-  background:rgba(0,0,0,.45); backdrop-filter:blur(10px); border-bottom:1px solid rgba(255,255,255,.15);
-}
+header{position:fixed; top:0; left:0; right:0; background:rgba(0,0,0,.45); backdrop-filter:blur(10px); border-bottom:1px solid rgba(255,255,255,.15);}
 .nav{max-width:1200px;margin:auto;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;}
-button{
-  background:rgba(255,255,255,.15);border:none;color:inherit;padding:10px 16px;border-radius:8px;cursor:pointer;margin-left:10px;
-}
-.glow{
-  padding:3px;border-radius:18px;
-  background:linear-gradient(90deg,#60a5fa,#818cf8,#60a5fa);
-  background-size:200% 200%; animation:glow 6s linear infinite;
-  width:90%; max-width:800px; margin:0 auto; display:flex; justify-content:center; padding:20px;
-}
-@keyframes glow{to{background-position:200% 50%;}}
-.container{
-  background:rgba(0,0,0,.55); border-radius:16px;
-  padding:32px; width:100%; min-height:400px;
-  box-shadow:0 20px 50px rgba(0,0,0,0.45);
-  display:flex; flex-direction:column; align-items:center;
-}
-.section{width:100%; margin-bottom:25px;}
-.section h2{margin-bottom:12px; border-bottom:1px solid rgba(255,255,255,0.2); padding-bottom:5px;}
-.section p{margin:6px 0; font-size:16px; text-align:center;}
-.map{width:100%; height:300px; border-radius:12px; margin-top:10px;}
+button{background:rgba(255,255,255,.15);border:none;color:inherit;padding:10px 16px;border-radius:8px;cursor:pointer;margin-left:10px;}
+.glow{padding:3px; border-radius:18px; background:linear-gradient(90deg,#60a5fa,#818cf8,#60a5fa); background-size:200% 200%; animation:glow 6s linear infinite; width:90%; max-width:1200px; margin:0 auto; display:flex; justify-content:center; padding:20px;}
+.container{background:rgba(0,0,0,.55); border-radius:16px; padding:32px; width:100%; min-height:400px; box-shadow:0 20px 50px rgba(0,0,0,0.45); display:flex; flex-direction:column; align-items:center;}
+.contact-list{list-style:none; padding:0;}
+.contact-list li{margin:12px 0;}
 </style>
 </head>
 <body>
-
 <header>
-  <div class="nav">
-    <h2>TypeFast</h2>
-    <div>
-      <button onclick="location.href='home.html'">Home</button>
-      <button onclick="location.href='index.html'">TypeFast</button>
-      <button onclick="location.href='dashboard.html'">Dashboard</button>
-      <button onclick="location.href='stats.html'">Stats</button>
-      <button onclick="location.href='contact.html'">Contact</button>
-    </div>
-  </div>
+<div class="nav">
+<h3>TypeFast</h3>
+<div>
+<button onclick="location.href='index.html'">Home</button>
+<button onclick="location.href='typing.html'">TypeFast</button>
+<button onclick="location.href='dashboard.html'">Dashboard</button>
+<button onclick="location.href='stats.html'">Stats</button>
+<button onclick="location.href='contact.html'">Contact</button>
+</div>
+</div>
 </header>
 
 <div class="glow">
   <div class="container">
-    <div class="section">
-      <h2>Name</h2>
-      <p>Ong Jing Qin</p>
-      <p>Seow Chen Khang</p>
-      <p>Woon Kai Xuan</p>
-      <p>Yau Yuan Jie</p>
-    </div>
-    <div class="section">
-      <h2>Contact & Location</h2>
-      <p>Contact Number: +60 149889283</p>
-      <p>Email: typefast@gmail.com</p>
-      <iframe
-        class="map"
-        src="https://www.google.com/maps?q=BB+Plaza,+Bukit+Beruang,+Melaka,+Malaysia&output=embed"
-        allowfullscreen>
-      </iframe>
-    </div>
+    <h1>Contact / Team</h1>
+    <ul class="contact-list">
+      <li>Lead Developer: Yau Yuan Jie</li>
+      <li>Email: example@email.com</li>
+      <li>GitHub: <a href="https://github.com/kaslitalk" target="_blank">kaslitalk</a></li>
+      <li>Discord: Example#1234</li>
+    </ul>
   </div>
 </div>
-
 </body>
 </html>
+
