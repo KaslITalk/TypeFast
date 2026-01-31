@@ -120,3 +120,9 @@ p#best-stats { text-align: center; margin-top: 12px; font-size: 14px; color: #cc
   color: #f87171; /* red */
 }
 
+ /* Typing text base style */
+#text-display span {
+  color: #e5e7eb;          /* visible light text */
+  white-space: pre-wrap;  /* keeps spaces visible */
+}
+
