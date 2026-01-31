@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>TypeFast — Improve Your Typing</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+*{box-sizing:border-box;}
+body{
+  margin:0; min-height:100vh; font-family:system-ui,sans-serif; color:#e5e7eb;
+  background:linear-gradient(270deg,#2145bd,#3b82f6,#6366f1,#2145bd);
+  background-size:600% 600%; animation:gradient 30s ease infinite;
+  display:flex; justify-content:center; align-items:flex-start; padding-top:40px;
+}
+@keyframes gradient{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%;}}
+header{
+  position:fixed; top:0; left:0; right:0;
+  background:rgba(0,0,0,.45); backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(255,255,255,.15);
+}
+.nav{max-width:1200px;margin:auto;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;}
+button{
+  background:rgba(255,255,255,.15); border:none; color:inherit;
+  padding:10px 16px; border-radius:8px; cursor:pointer; margin-left:10px;
+}
+.glow{
+  padding:3px; border-radius:18px;
+  background:linear-gradient(90deg,#60a5fa,#818cf8,#60a5fa);
+  background-size:200% 200%; animation:glow 6s linear infinite;
+  width:90%; max-width:800px; margin:0 auto; display:flex; justify-content:center; padding:20px;
+}
+@keyframes glow{to{background-position:200% 50%;}}
+.container{
+  background:rgba(0,0,0,.55); border-radius:16px;
+  padding:32px; width:100%; min-height:400px;
+  box-shadow:0 20px 50px rgba(0,0,0,0.45);
+  display:flex; flex-direction:column; align-items:center;
+}
+.hero{display:grid;grid-template-columns:1.2fr 1fr;gap:30px;width:100%;}
+.feature{background:rgba(255,255,255,.06);padding:20px;border-radius:14px;}
+@media(max-width:900px){.hero{grid-template-columns:1fr;text-align:center}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <h2>TypeFast</h2>
+    <div>
+      <button onclick="location.href='home.html'">Home</button>
+      <button onclick="location.href='index.html'">TypeFast</button>
+      <button onclick="location.href='dashboard.html'">Dashboard</button>
+      <button onclick="location.href='stats.html'">Stats</button>
+      <button onclick="location.href='contact.html'">Contact</button>
+    </div>
+  </div>
+</header>
+
+<div class="glow">
+  <div class="container">
+    <div class="hero">
+      <div>
+        <h1>Type Faster.<br>Type Smarter.</h1>
+        <p>Clean, distraction-free typing trainer that runs fully in your browser.</p>
+        <button onclick="location.href='index.html'">🚀 Start Typing</button>
+      </div>
+      <div class="feature">
+        <h3>Why TypeFast?</h3>
+        <p>• Accuracy feedback</p>
+        <p>• WPM tracking</p>
+        <p>• Quotes & word modes</p>
+        <p>• No accounts</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

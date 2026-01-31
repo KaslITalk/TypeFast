@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>TypeFast Stats</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+*{box-sizing:border-box;}
+body{
+  margin:0; font-family:system-ui,sans-serif; color:#e5e7eb;
+  background:linear-gradient(270deg,#2145bd,#3b82f6,#6366f1,#2145bd);
+  background-size:600% 600%; animation:gradient 30s ease infinite;
+  min-height:100vh; display:flex; justify-content:center; align-items:flex-start; padding-top:40px;
+}
+@keyframes gradient{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%;}}
+header{
+  position:fixed; top:0; left:0; right:0;
+  background:rgba(0,0,0,.45); backdrop-filter:blur(10px); border-bottom:1px solid rgba(255,255,255,.15);
+}
+.nav{max-width:1200px;margin:auto;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;}
+button{
+  background:rgba(255,255,255,.15);border:none;color:inherit;padding:10px 16px;border-radius:8px;cursor:pointer;margin-left:10px;
+}
+.glow{
+  padding:3px;border-radius:18px;
+  background:linear-gradient(90deg,#60a5fa,#818cf8,#60a5fa);
+  background-size:200% 200%; animation:glow 6s linear infinite;
+  width:90%; max-width:1200px; margin:0 auto; display:flex; justify-content:center; padding:20px;
+}
+@keyframes glow{to{background-position:200% 50%;}}
+.container{
+  background:rgba(0,0,0,.55); border-radius:16px;
+  padding:32px; width:100%; min-height:600px;
+  box-shadow:0 20px 50px rgba(0,0,0,0.45);
+  display:flex; flex-direction:column; align-items:center;
+}
+canvas{width:100%; max-width:100%; border-radius:12px; margin-top:20px;}
+p#best-stats{text-align:center; margin-top:12px; font-size:14px; color:#ccc;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <h3>TypeFast</h3>
+    <div>
+      <button onclick="location.href='home.html'">Home</button>
+      <button onclick="location.href='index.html'">TypeFast</button>
+      <button onclick="location.href='dashboard.html'">Dashboard</button>
+      <button onclick="location.href='stats.html'">Stats</button>
+      <button onclick="location.href='contact.html'">Contact</button>
+    </div>
+  </div>
+</header>
+
+<div class="glow">
+  <div class="container">
+    <h1>Stats</h1>
+    <canvas id="statsChart" height="300"></canvas>
+    <p id="best-stats"></p>
+  </div>
+</div>
+
+<script>
+const sessionHistory = JSON.parse(localStorage.getItem("sessionHistory")) || [];
+const labels = sessionHistory.map((_,i)=>`Run ${i+1}`);
+const wpmData = sessionHistory.map(s=>s.wpm);
+const accData = sessionHistory.map(s=>s.accuracy);
+const highWPM = Math.max(...wpmData,0);
+const highAcc = Math.max(...accData,0);
+document.getElementById("best-stats").textContent = `Best WPM: ${highWPM} | Best Accuracy: ${highAcc}%`;
+
+new Chart(document.getElementById("statsChart"),{
+  type:'line',
+  data:{
+    labels,
+    datasets:[
+      {label:'WPM', data:wpmData, borderColor:'#4ade80', backgroundColor:'rgba(74,222,128,0.2)', borderWidth:2, tension:0.3},
+      {label:'Accuracy (%)', data:accData, borderColor:'#f87171', backgroundColor:'rgba(248,113,113,0.2)', borderWidth:2, tension:0.3}
+    ]
+  },
+  options:{
+    responsive:true,
+    plugins:{legend:{labels:{color:'white'}}},
+    scales:{ x:{ticks:{color:'white'}}, y:{beginAtZero:true, ticks:{color:'white'}} }
+  }
+});
+</script>
+
+</body>
+</html>
