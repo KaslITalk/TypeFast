@@ -126,3 +126,25 @@ p#best-stats { text-align: center; margin-top: 12px; font-size: 14px; color: #cc
   white-space: pre-wrap;  /* keeps spaces visible */
 }
 
+.hero {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.hero h1 {
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  max-width: 480px;
+  line-height: 1.6;
+  opacity: 0.9;
+  margin-bottom: 1.5rem;
+}
+
+.hero button {
+  margin-top: 0.5rem;
+}
