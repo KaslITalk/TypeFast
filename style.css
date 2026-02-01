@@ -54,9 +54,9 @@ button {
   background: linear-gradient(90deg,#60a5fa,#818cf8,#60a5fa);
   background-size: 200% 200%;
   animation: glow 6s linear infinite;
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
+  width: 94vw;
+  max-width: 1600px;
+  margin: 40px auto;
   display: flex;
   justify-content: center;
   padding: 20px;
